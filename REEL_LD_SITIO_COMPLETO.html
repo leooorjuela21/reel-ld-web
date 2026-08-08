@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050507"><meta name="description" content="REEL, LD — Música y Reels Cortos">
+<title>REEL, LD — Música y Reels Cortos</title>
+<style>
+:root{--bg:#050507;--line:rgba(255,255,255,.1);--muted:#9b9ba7;--pink:#ff19a8;--violet:#6d4aff;--cyan:#00d9ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(109,74,255,.16),transparent 28%),radial-gradient(circle at 10% 25%,rgba(255,25,168,.1),transparent 28%),var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif}button{font:inherit}a{color:inherit}
+#intro{position:fixed;inset:0;z-index:9999;background:#020204;display:grid;place-items:center;transition:.8s}#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-box{width:min(90vw,620px);text-align:center}.intro-img{width:100%;border-radius:24px;box-shadow:0 0 80px rgba(255,25,168,.2);animation:zoom 4s ease-in-out}.intro-title{font-size:clamp(30px,7vw,58px);font-weight:900;margin:16px 0 4px}.intro-sub{color:#aaa;margin:0}.loader{height:3px;background:#222;border-radius:5px;overflow:hidden;width:80%;margin:20px auto}.loader span{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan));animation:load 4.2s linear}@keyframes zoom{50%{transform:scale(1.04)}}@keyframes load{to{width:100%}}
+header{position:sticky;top:0;z-index:100;background:rgba(5,5,7,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:18px}.logo{font-size:22px;font-weight:900;text-decoration:none}.mark{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--pink),var(--violet));margin-right:8px}.navlinks{display:flex;gap:18px;margin-left:auto}.navlinks a{text-decoration:none;color:#aaa;font-size:14px}.navlinks a:hover{color:#fff}.fb{text-decoration:none;border:1px solid var(--line);background:#11111a;border-radius:20px;padding:8px 13px;font-size:13px}
+.hero{max-width:1200px;margin:auto;padding:40px 18px 30px;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center}.eyebrow{font-size:12px;letter-spacing:2px;color:#c9c1ff;font-weight:800}h1{font-size:clamp(40px,6vw,70px);line-height:.98;margin:12px 0 16px;letter-spacing:-3px}.grad{background:linear-gradient(90deg,#fff,var(--pink),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);line-height:1.7;font-size:16px}.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{padding:11px 16px;border-radius:11px;text-decoration:none;font-weight:800;border:1px solid var(--line);cursor:pointer}.primary{background:linear-gradient(90deg,var(--pink),var(--violet));border:0}
+.hero-player{background:#000;border:1px solid var(--line);border-radius:22px;padding:8px;box-shadow:0 25px 80px rgba(0,0,0,.5)}.hero-player video{display:block;width:100%;max-height:650px;object-fit:contain;background:#000;border-radius:16px}.player-info{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 5px 4px}.player-info strong{font-size:14px}.player-info span{color:#888;font-size:12px}.player-controls{display:flex;gap:7px}.small-btn{background:#15151d;color:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px;cursor:pointer}
+.section{max-width:1200px;margin:auto;padding:28px 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.section h2{font-size:30px;margin:0}.section p{color:#888;margin:6px 0 0}.filters{display:flex;gap:8px;overflow:auto;padding:4px 0 17px}.filter{background:#101017;color:#aaa;border:1px solid var(--line);padding:8px 14px;border-radius:20px;white-space:nowrap;cursor:pointer}.filter.active,.filter:hover{background:#fff;color:#000}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(180deg,#111118,#0b0b10);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2)}.thumb{position:relative;aspect-ratio:16/10;background:#000;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;transition:.35s}.card:hover .thumb img{transform:scale(1.05)}.tag{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);padding:5px 8px;border-radius:14px;font-size:10px;border:1px solid #444}.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;border:1px solid #aaa;font-size:21px;cursor:pointer}.card-body{padding:14px}.card-body small{color:#9c91ff;font-weight:800;letter-spacing:1.5px}.card h3{font-size:17px;margin:6px 0}.card p{font-size:12px;color:#888;line-height:1.5;margin:0}.watch{width:100%;margin-top:12px;border:0;border-radius:9px;padding:10px;background:#fff;color:#000;font-weight:800;cursor:pointer}.about{background:linear-gradient(135deg,#101019,#0a0a0e);border:1px solid var(--line);border-radius:18px;padding:22px;line-height:1.7;color:#aaa}footer{border-top:1px solid var(--line);text-align:center;padding:32px 18px;color:#777;margin-top:35px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-player{max-width:720px;margin:auto}.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}@media(max-width:560px){.hero{padding:30px 14px}.section{padding:22px 14px}.grid{grid-template-columns:1fr 1fr;gap:9px}.card-body{padding:10px}.card h3{font-size:14px}.card p{font-size:11px}.player-info{align-items:flex-start;flex-direction:column}.nav{padding:10px 13px}}
+</style></head><body>
+<div id="intro"><div class="intro-box"><img class="intro-img" src="reel-ld-portada.jpg" alt="REEL, LD"><div class="intro-title">REEL, LD</div><p class="intro-sub">MÚSICA · REELS · CONTENIDO CORTO</p><div class="loader"><span></span></div></div></div>
+<header><nav class="nav"><a class="logo" href="#inicio"><span class="mark">▶</span>REEL, LD</a><div class="navlinks"><a href="#inicio">Inicio</a><a href="#videos">Videos</a><a href="#sobre">Sobre REEL, LD</a></div><a class="fb" href="https://www.facebook.com/share/18Hbd8xXYS/" target="_blank" rel="noopener">f Facebook</a></nav></header>
+<section class="hero" id="inicio"><div><div class="eyebrow">TU CONTENIDO · TU MARCA</div><h1>Reels que <span class="grad">cobran vida.</span></h1><p>Ahora tus videos editados están dentro de REEL, LD y se pueden reproducir directamente desde tu propia página web.</p><div class="hero-buttons"><a class="btn primary" href="#videos">▶ Ver todos</a><a class="btn" href="https://www.facebook.com/share/18Hbd8xXYS/" target="_blank" rel="noopener">f Facebook</a></div></div>
+<div class="hero-player"><video id="mainPlayer" autoplay muted playsinline controls poster="posters/2108.jpg"><source src="videos/2108.mp4" type="video/mp4"></video><div class="player-info"><div><strong id="playerTitle">REEL, LD · Video 1</strong><br><span id="playerDesc">Contenido editado de REEL, LD.</span></div><div class="player-controls"><button class="small-btn" onclick="previousVideo()">⏮</button><button class="small-btn" onclick="nextVideo()">⏭</button></div></div></div></section>
+<section class="section" id="videos"><div class="section-head"><div><h2>Mis videos</h2><p>Videos editados y alojados en tu propio sitio.</p></div></div><div class="filters"><button class="filter active" onclick="filterVideos('Todos',this)">Todos</button><button class="filter" onclick="filterVideos('Reels',this)">Reels</button><button class="filter" onclick="filterVideos('Entretenimiento',this)">Entretenimiento</button></div><div class="grid">
+<article class="card" data-cat="Reels">
+  <div class="thumb"><img src="posters/2108.jpg" alt="REEL, LD · Video 1" loading="lazy">
+    <span class="tag">Reels</span><button class="play" onclick="playVideo(0)">▶</button>
+  </div>
+  <div class="card-body"><small>REEL, LD</small><h3>REEL, LD · Video 1</h3>
+    <p>Contenido editado de REEL, LD.</p><button class="watch" onclick="playVideo(0)">▶ Reproducir</button>
+  </div>
+</article>
+<article class="card" data-cat="Reels">
+  <div class="thumb"><img src="posters/2109.jpg" alt="REEL, LD · Video 2" loading="lazy">
+    <span class="tag">Reels</span><button class="play" onclick="playVideo(1)">▶</button>
+  </div>
+  <div class="card-body"><small>REEL, LD</small><h3>REEL, LD · Video 2</h3>
+    <p>Contenido editado de REEL, LD.</p><button class="watch" onclick="playVideo(1)">▶ Reproducir</button>
+  </div>
+</article>
+<article class="card" data-cat="Entretenimiento">
+  <div class="thumb"><img src="posters/2107.jpg" alt="REEL, LD · Video 3" loading="lazy">
+    <span class="tag">Entretenimiento</span><button class="play" onclick="playVideo(2)">▶</button>
+  </div>
+  <div class="card-body"><small>REEL, LD</small><h3>REEL, LD · Video 3</h3>
+    <p>Contenido editado de REEL, LD.</p><button class="watch" onclick="playVideo(2)">▶ Reproducir</button>
+  </div>
+</article>
+<article class="card" data-cat="Entretenimiento">
+  <div class="thumb"><img src="posters/1741.jpg" alt="REEL, LD · Video 4" loading="lazy">
+    <span class="tag">Entretenimiento</span><button class="play" onclick="playVideo(3)">▶</button>
+  </div>
+  <div class="card-body"><small>REEL, LD</small><h3>REEL, LD · Video 4</h3>
+    <p>Contenido editado de REEL, LD.</p><button class="watch" onclick="playVideo(3)">▶ Reproducir</button>
+  </div>
+</article>
+<article class="card" data-cat="Reels">
+  <div class="thumb"><img src="posters/1740.jpg" alt="REEL, LD · Video 5" loading="lazy">
+    <span class="tag">Reels</span><button class="play" onclick="playVideo(4)">▶</button>
+  </div>
+  <div class="card-body"><small>REEL, LD</small><h3>REEL, LD · Video 5</h3>
+    <p>Contenido editado de REEL, LD.</p><button class="watch" onclick="playVideo(4)">▶ Reproducir</button>
+  </div>
+</article></div></section>
+<section class="section" id="sobre"><h2>REEL, LD</h2><div class="about">Tus archivos MP4 están preparados para reproducirse directamente desde la web. No dependen de OMDb, TMDB ni de una plataforma de películas. Puedes seguir agregando nuevos videos a la carpeta <strong>videos</strong> y sus portadas a <strong>posters</strong>.</div></section>
+<footer>🎬 <strong>REEL, LD</strong><br><br>© <span id="year"></span> REEL, LD · Todos los derechos reservados.</footer>
+<script>
+const VIDEOS=[{file:"videos/2108.mp4",poster:"posters/2108.jpg",title:"REEL, LD · Video 1",cat:"Reels"},{file:"videos/2109.mp4",poster:"posters/2109.jpg",title:"REEL, LD · Video 2",cat:"Reels"},{file:"videos/2107.mp4",poster:"posters/2107.jpg",title:"REEL, LD · Video 3",cat:"Entretenimiento"},{file:"videos/1741.mp4",poster:"posters/1741.jpg",title:"REEL, LD · Video 4",cat:"Entretenimiento"},{file:"videos/1740.mp4",poster:"posters/1740.jpg",title:"REEL, LD · Video 5",cat:"Reels"}];let current=0;
+function playVideo(i){current=i;const v=VIDEOS[i],p=document.getElementById('mainPlayer');p.src=v.file;p.poster=v.poster;document.getElementById('playerTitle').textContent=v.title;document.getElementById('playerDesc').textContent='Contenido editado de REEL, LD.';p.muted=false;p.play().catch(()=>{});document.getElementById('inicio').scrollIntoView({behavior:'smooth'});}
+function nextVideo(){playVideo((current+1)%VIDEOS.length)}function previousVideo(){playVideo((current-1+VIDEOS.length)%VIDEOS.length)}
+function filterVideos(cat,btn){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.card').forEach(c=>c.style.display=(cat==='Todos'||c.dataset.cat===cat)?'':'none');}
+document.getElementById('mainPlayer').addEventListener('ended',nextVideo);document.getElementById('year').textContent=new Date().getFullYear();
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('intro').classList.add('hide'),4200);const p=document.getElementById('mainPlayer');p.muted=true;p.play().catch(()=>{});});
+</script></body></html>
