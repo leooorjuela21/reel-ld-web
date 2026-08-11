@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#050507">
 <meta name="description" content="REEL, LD — Música y Reels Cortos">
-<meta name="robots" content="index,follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="REEL, LD — Música y Reels Cortos">
-<meta property="og:description" content="Videos y Reels cortos de REEL, LD.">
-<meta property="og:locale" content="es_CO">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="google-adsense-account" content="ca-pub-2689183796009444">
 
 <title>REEL, LD — Música y Reels Cortos</title>
@@ -99,7 +93,7 @@ text-align:center
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
 .card{background:linear-gradient(180deg,#15161d,#0d0e13);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
 .card:hover{transform:translateY(-4px);border-color:rgba(255,20,147,.55)}
-.thumb{aspect-ratio:9/16;background:radial-gradient(circle at 50% 25%,rgba(255,20,147,.55),transparent 30%),linear-gradient(145deg,#08080b,#202331);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.thumb{aspect-ratio:9/16;background:radial-gradient(circle at 50% 25%,rgba(255,20,147,.55),transparent 30%),linear-gradient(145deg,#08080b,#202331);display:flex;align-items:center;justify-content:center}
 .thumb .play{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.25);font-size:23px}
 .card-body{padding:13px}.card-body h3{margin:0 0 6px;font-size:16px}.card-body p{margin:0;color:var(--muted);font-size:12px}
 .card-actions{display:flex;gap:7px;margin-top:12px}
@@ -108,8 +102,8 @@ text-align:center
 
 .socials{display:flex;flex-wrap:wrap;gap:10px}.social{padding:12px 16px;border-radius:13px;background:#11131a;border:1px solid var(--line)}.social:hover{border-color:var(--pink)}
 footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid var(--line);margin-top:20px;font-size:13px}
-.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#191b24;border:1px solid var(--line);padding:12px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease,visibility .25s ease}
-.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#191b24;border:1px solid var(--line);padding:12px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:10000;font-size:13px}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
 @media(max-width:850px){
 .hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy p{margin-left:auto;margin-right:auto}
@@ -138,7 +132,7 @@ footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid 
 <nav class="nav">
 <a class="brand" href="#inicio">🎬 REEL, <b>LD</b></a>
 <div class="nav-links">
-<a href="#inicio">Inicio</a><a href="#videos">Reels</a><a href="#publicidad">Publicidad</a><a href="#redes">Redes</a><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html">Contacto</a>
+<a href="#inicio">Inicio</a><a href="#videos">Reels</a><a href="#publicidad">Publicidad</a><a href="#redes">Redes</a>
 </div>
 </nav>
 </header>
@@ -160,7 +154,7 @@ footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid 
 </div>
 
 <div class="hero-player">
-<video id="mainPlayer" playsinline muted autoplay preload="metadata" controls><p>Tu navegador no puede reproducir este video.</p></video>
+<video id="mainPlayer" playsinline muted autoplay preload="auto" controls></video>
 <div class="player-info">
 <strong id="nowPlaying">REEL, LD · Cargando…</strong>
 <span class="status" id="playerStatus">Reproducción automática</span>
@@ -168,9 +162,19 @@ footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid 
 </div>
 </div>
 </section>
+
+<!-- GOOGLE ADSENSE -->
 <section class="ad-section" id="publicidad">
-  <div class="ad-box"><div class="ad-label">Publicidad</div></div>
+<div class="ad-box">
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-2689183796009444"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<div class="ad-label">Publicidad</div>
+</div>
 </section>
+
 <section class="section" id="videos">
 <div class="section-title">
 <div><h2>🔥 Mis Reels</h2><p>Selecciona cualquier video para reproducirlo.</p></div>
@@ -178,71 +182,39 @@ footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid 
 
 <div class="grid">
 
-<article class="card">
-  <div class="thumb"><div class="play">▶</div></div>
-  <div class="card-body">
-    <h3>Mi Reel #1</h3>
-    <p>REEL, LD · Video corto</p>
-    <div class="card-actions">
-      <button class="small-btn primary" onclick="playVideo(0)">▶ Reproducir</button>
-      <button class="small-btn" onclick="shareVideo(0)">🔗 Compartir</button>
-    </div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="thumb"><div class="play">▶</div></div>
-  <div class="card-body">
-    <h3>Mi Reel #2</h3>
-    <p>REEL, LD · Video corto</p>
-    <div class="card-actions">
-      <button class="small-btn primary" onclick="playVideo(1)">▶ Reproducir</button>
-      <button class="small-btn" onclick="shareVideo(1)">🔗 Compartir</button>
-    </div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="thumb"><div class="play">▶</div></div>
-  <div class="card-body">
-    <h3>Mi Reel #3</h3>
-    <p>REEL, LD · Video corto</p>
-    <div class="card-actions">
-      <button class="small-btn primary" onclick="playVideo(2)">▶ Reproducir</button>
-      <button class="small-btn" onclick="shareVideo(2)">🔗 Compartir</button>
-    </div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="thumb"><div class="play">▶</div></div>
-  <div class="card-body">
-    <h3>Mi Reel #4</h3>
-    <p>REEL, LD · Video corto</p>
-    <div class="card-actions">
-      <button class="small-btn primary" onclick="playVideo(3)">▶ Reproducir</button>
-      <button class="small-btn" onclick="shareVideo(3)">🔗 Compartir</button>
-    </div>
-  </div>
-</article>
-
-<article class="card">
-  <div class="thumb"><div class="play">▶</div></div>
-  <div class="card-body">
-    <h3>Mi Reel #5</h3>
-    <p>REEL, LD · Video corto</p>
-    <div class="card-actions">
-      <button class="small-btn primary" onclick="playVideo(4)">▶ Reproducir</button>
-      <button class="small-btn" onclick="shareVideo(4)">🔗 Compartir</button>
-    </div>
-  </div>
-</article>
+<article class="card"><div class="thumb"><div class="play">▶</div></div><div class="card-body"><h3>Mi Reel #1</h3><p>REEL, LD · Video corto</p><div class="card-actions"><button class="small-btn primary" onclick="playVideo(0)">▶ Reproducir</button><button class="small-btn" onclick="shareVideo(0)">↗ Compartir</button></div></div></article>
+<article class="card"><div class="thumb"><div class="play">▶</div></div><div class="card-body"><h3>Mi Reel #2</h3><p>REEL, LD · Video corto</p><div class="card-actions"><button class="small-btn primary" onclick="playVideo(1)">▶ Reproducir</button><button class="small-btn" onclick="shareVideo(1)">↗ Compartir</button></div></div></article>
+<article class="card"><div class="thumb"><div class="play">▶</div></div><div class="card-body"><h3>Mi Reel #3</h3><p>REEL, LD · Video corto</p><div class="card-actions"><button class="small-btn primary" onclick="playVideo(2)">▶ Reproducir</button><button class="small-btn" onclick="shareVideo(2)">↗ Compartir</button></div></div></article>
+<article class="card"><div class="thumb"><div class="play">▶</div></div><div class="card-body"><h3>Mi Reel #4</h3><p>REEL, LD · Video corto</p><div class="card-actions"><button class="small-btn primary" onclick="playVideo(3)">▶ Reproducir</button><button class="small-btn" onclick="shareVideo(3)">↗ Compartir</button></div></div></article>
+<article class="card"><div class="thumb"><div class="play">▶</div></div><div class="card-body"><h3>Mi Reel #5</h3><p>REEL, LD · Video corto</p><div class="card-actions"><button class="small-btn primary" onclick="playVideo(4)">▶ Reproducir</button><button class="small-btn" onclick="shareVideo(4)">↗ Compartir</button></div></div></article>
 
 </div>
 </section>
+
+<!-- GOOGLE ADSENSE SEGUNDO BLOQUE -->
 <section class="ad-section">
-  <div class="ad-box"><div class="ad-label">Publicidad</div></div>
+<div class="ad-box">
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-2689183796009444"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<div class="ad-label">Publicidad</div>
+</div>
 </section>
+
+<!-- PUBLICIDAD EXTERNA -->
+<section class="section">
+<div class="external-ad">
+<h3>📢 Publicidad y oportunidades</h3>
+<p>Descubre una oferta o servicio de nuestro socio publicitario.</p>
+<a class="ad-button"
+href="https://www.effectivecpmnetwork.com/qm67rur29?key=b3aecbce0b46858b7dce733a3d77624f"
+target="_blank"
+rel="noopener sponsored nofollow">Ver publicidad</a>
+</div>
+</section>
+
 <section class="section" id="redes">
 <div class="section-title">
 <div><h2>📲 Encuéntrame en redes</h2><p>También puedes ver y compartir el contenido desde mis redes.</p></div>
@@ -261,7 +233,7 @@ footer{text-align:center;color:#777;padding:30px 18px 45px;border-top:1px solid 
 
 <footer>
 © 2026 REEL, LD — Música y Reels Cortos<br>
-Todos los derechos reservados. · <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a>
+Todos los derechos reservados.
 </footer>
 
 <div class="toast" id="toast"></div>
@@ -280,97 +252,76 @@ const nowPlaying=document.getElementById("nowPlaying");
 const playerStatus=document.getElementById("playerStatus");
 let current=0;
 
-function safeSetText(el, text){
-  if(el) el.textContent = text;
-}
-
 function loadVideo(index,auto=true){
-  if(!player) return console.error('player element not found');
-  current=(index+videos.length)%videos.length;
-  const item=videos[current];
-  player.src=item.file;
-  player.load();
-  safeSetText(nowPlaying,"REEL, LD · "+item.title);
-  safeSetText(playerStatus,"Video "+(current+1)+" de "+videos.length);
-  if(auto){
-    const promise=player.play();
-    if(promise) promise.catch(err=>{
-      console.warn('player.play() rejected:', err);
-      safeSetText(playerStatus,'Toca ▶ para iniciar');
-      showToast('La reproducción automática falló: permite la reproducción o pulsa ▶');
-    });
-  }
+current=(index+videos.length)%videos.length;
+const item=videos[current];
+player.src=item.file;
+player.load();
+nowPlaying.textContent="REEL, LD · "+item.title;
+playerStatus.textContent="Video "+(current+1)+" de "+videos.length;
+if(auto){
+const promise=player.play();
+if(promise) promise.catch(()=>{playerStatus.textContent="Toca ▶ para iniciar";});
+}
 }
 
 function playVideo(index){
-  loadVideo(index,true);
-  const inicio=document.getElementById("inicio");
-  if(inicio) inicio.scrollIntoView({behavior:"smooth"});
+loadVideo(index,true);
+document.getElementById("inicio").scrollIntoView({behavior:"smooth"});
 }
 
-if(player){
-  player.addEventListener("ended",()=>loadVideo(current+1,true));
-  player.addEventListener("error",(e)=>{ safeSetText(playerStatus,'No se pudo cargar este video'); console.error('Video element error', e); });
-}
+player.addEventListener("ended",()=>loadVideo(current+1,true));
+player.addEventListener("error",()=>{playerStatus.textContent="No se pudo cargar este video";});
 
 function toggleMute(){
-  if(!player) return;
-  player.muted=!player.muted;
-  safeSetText(playerStatus,player.muted?"Sonido desactivado":"Sonido activado");
-  const promise=player.play();
-  if(promise) promise.catch(err=>{
-    console.warn('player.play() rejected on toggleMute:', err);
-  });
+player.muted=!player.muted;
+playerStatus.textContent=player.muted?"Sonido desactivado":"Sonido activado";
+const promise=player.play();
+if(promise) promise.catch(()=>{});
 }
 
 async function shareVideo(index){
-  const item=videos[index];
-  const url=new URL(item.file,window.location.href).href;
-  if(navigator.share){
-    try{
-      await navigator.share({title:"REEL, LD — "+item.title,text:"Mira este Reel de REEL, LD",url});
-      return;
-    }catch(e){console.warn('navigator.share failed', e)}
-  }
-  try{
-    await navigator.clipboard.writeText(url);
-    showToast("Enlace copiado");
-  }catch(e){
-    console.warn('clipboard.writeText failed', e);
-    showToast("No se pudo copiar el enlace");
-  }
+const item=videos[index];
+const url=new URL(item.file,window.location.href).href;
+if(navigator.share){
+try{
+await navigator.share({title:"REEL, LD — "+item.title,text:"Mira este Reel de REEL, LD",url});
+return;
+}catch(e){}
+}
+try{
+await navigator.clipboard.writeText(url);
+showToast("Enlace copiado");
+}catch(e){showToast("No se pudo copiar el enlace");}
 }
 
 function showToast(text){
-  const toast=document.getElementById("toast");
-  if(!toast) return;
-  toast.textContent=text;
-  toast.classList.add("show");
-  clearTimeout(window.toastTimer);
-  window.toastTimer=setTimeout(()=>toast.classList.remove("show"),2200);
+const toast=document.getElementById("toast");
+toast.textContent=text;
+toast.classList.add("show");
+clearTimeout(window.toastTimer);
+window.toastTimer=setTimeout(()=>toast.classList.remove("show"),2200);
 }
 
 window.addEventListener("load",function(){
-  // load first video but do not force autoplay if it will be blocked
-  loadVideo(0,true);
-  setTimeout(()=>{const intro=document.getElementById("intro"); if(intro) intro.classList.add("hide")},900);
+loadVideo(0,true);
+
+/* Inicializa los dos bloques AdSense */
+try{
+(window.adsbygoogle=window.adsbygoogle||[]).push({});
+(window.adsbygoogle=window.adsbygoogle||[]).push({});
+}catch(e){}
+
+setTimeout(()=>document.getElementById("intro").classList.add("hide"),2800);
 });
 
 document.addEventListener("visibilitychange",function(){
-  if(!document.hidden && player && player.paused){
-    const promise=player.play();
-    if(promise) promise.catch(()=>{});
-  }
-});
-
-// Global error handlers to capture problems in production
-window.addEventListener('error', e => {
-  console.error('Unhandled error:', e.error ?? e.message, e);
-});
-window.addEventListener('unhandledrejection', e => {
-  console.error('Unhandled promise rejection:', e.reason);
+if(!document.hidden && player.paused){
+const promise=player.play();
+if(promise) promise.catch(()=>{});
+}
 });
 </script>
 
 </body>
-</html>
+  </html>
